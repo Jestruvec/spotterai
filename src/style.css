@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #008080;
+  --color-gray-dash: #e4e5e1;
+  --color-gray-light-3: #f0f0ed;
+  --color-gray-light-2: #c1c1be;
+  --color-gray-light: #8c8c89;
+  --color-gray-1: #f8f8f6;
+  --color-gray-4: #d9d9d6;
+  --color-gray-dark: #484946;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.mask-image {
+  mask-image: linear-gradient(black 80%, transparent);
+}
+
+.magnifier {
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: brightness(1.5);
+}

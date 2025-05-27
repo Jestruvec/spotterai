@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jhonny Estruve Spotter.ai</title>
+    <style>
+      body {
+        opacity: 0;
+        transition: opacity 0.5s ease-in;
+      }
+      body.loaded {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app" class="relative">
+      <header
+        class="fixed top-0 w-full h-16 px-4 py-2 bg-gray-50 shadow-sm border-b border-gray-dash"
+      >
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <img src="/favicon.ico" alt="" />
+            <h1 class="text-2xl font-semibold">Spotter.ai</h1>
+          </div>
+
+          <nav class="hidden xl:block">
+            <ul class="flex font-semibold gap-2">
+              <li>
+                <a
+                  href="#product"
+                  class="rounded-lg text-gray-600 px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary hover:bg-gray-100"
+                >
+                  Product
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#use-cases"
+                  class="rounded-lg text-gray-600 px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary hover:bg-gray-100"
+                  >Use Cases</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#developers"
+                  class="rounded-lg text-gray-600 px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary hover:bg-gray-100"
+                  >Developers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#resources"
+                  class="rounded-lg text-gray-600 px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary hover:bg-gray-100"
+                  >Resources</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#demo"
+                  class="rounded-lg text-gray-600 px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary hover:bg-gray-100"
+                  >Demo</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#pricing"
+                  class="rounded-lg text-gray-600 px-2 py-1 focus:outline-none focus:ring-2 focus:ring-primary hover:bg-gray-100"
+                  >Pricing</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <div class="flex gap-2">
+            <div class="hidden md:flex gap-2">
+              <button
+                class="rounded-lg focus:outline-0 focus:ring-2 focus:ring-primary font-semibold px-2 py-1 text-primary hover:bg-gray-100 cursor-pointer"
+              >
+                Login
+              </button>
+              <button
+                class="rounded-lg focus:outline-0 focus:ring-2 focus:ring-primary font-semibold px-2 py-1 border bg-white text-primary cursor-pointer hover:bg-gray-100"
+              >
+                Contact Sales
+              </button>
+              <button
+                class="rounded-lg focus:outline-0 focus:ring-2 focus:ring-primary font-semibold px-2 py-1 bg-primary text-white cursor-pointer hover:opacity-90"
+              >
+                Get Started
+              </button>
+            </div>
+
+            <button
+              id="menu-button"
+              class="xl:hidden rounded-lg focus:outline-0 focus:ring-2 focus:ring-primary px-2 py-1 cursor-pointer hover:bg-gray-100"
+            >
+              <img src="/svg/bars.svg" alt="menu bars icon" class="w-6" />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <aside
+        id="sidebar"
+        role="dialog"
+        aria-label="Main menu"
+        aria-hidden="true"
+        inert
+        class="absolute w-screen transform transition-all ease-in-out duration-300 z-10 h-[calc(100dvh-4rem)] bg-white flex flex-col justify-between translate-x-[-100%]"
+      >
+        <div class="flex flex-col text-gray-dark">
+          <button
+            aria-label="Go to Product section"
+            class="cursor-pointer p-4 text-start font-semibold flex items-center justify-between border-b border-dashed border-gray-dash hover:bg-gray-50 focus:outline-0 focus:border-primary"
+          >
+            Product
+            <img src="/svg/arrow-right.svg" alt="" class="w-4" />
+          </button>
+          <button
+            aria-label="Go to Use Cases section"
+            class="cursor-pointer p-4 text-start font-semibold flex items-center justify-between border-b border-dashed border-gray-dash hover:bg-gray-50 focus:outline-0 focus:border-primary"
+          >
+            Use Cases
+            <img src="/svg/arrow-right.svg" alt="" class="w-4" />
+          </button>
+          <button
+            aria-label="Go to Developers section"
+            class="cursor-pointer p-4 text-start font-semibold flex items-center justify-between border-b border-dashed border-gray-dash hover:bg-gray-50 focus:outline-0 focus:border-primary"
+          >
+            Developers
+            <img src="/svg/arrow-right.svg" alt="" class="w-4" />
+          </button>
+          <button
+            aria-label="Go to Resources section"
+            class="cursor-pointer p-4 text-start font-semibold flex items-center justify-between border-b border-dashed border-gray-dash hover:bg-gray-50 focus:outline-0 focus:border-primary"
+          >
+            Resources
+            <img src="/svg/arrow-right.svg" alt="" class="w-4" />
+          </button>
+          <button
+            aria-label="Go to Demo section"
+            class="cursor-pointer p-4 text-start font-semibold flex items-center justify-between border-b border-dashed border-gray-dash hover:bg-gray-50 focus:outline-0 focus:border-primary"
+          >
+            Demo
+            <img src="/svg/arrow-right.svg" alt="" class="w-4" />
+          </button>
+          <button
+            aria-label="View pricing information"
+            class="cursor-pointer p-4 text-start font-semibold flex items-center justify-between border-b border-dashed border-gray-dash hover:bg-gray-50 focus:outline-0 focus:border-primary"
+          >
+            Pricing
+          </button>
+          <button
+            aria-label="Contact sales team"
+            class="cursor-pointer p-4 text-start font-semibold flex items-center justify-between border-b border-dashed border-gray-dash hover:bg-gray-50 focus:outline-0 focus:border-primary"
+          >
+            Contact Sales
+          </button>
+        </div>
+
+        <div class="p-4">
+          <button
+            aria-label="Start now"
+            class="w-full font-semibold shadow text-sm bg-gray-1 border-gray-4 border rounded p-2 focus:outline-0 focus:ring-2 focus:ring-primary cursor-pointer hover:bg-gray-100 transition-colors ease-in-out duration-300"
+          >
+            Get Started
+          </button>
+        </div>
+      </aside>
+
+      <main class="mt-16 md:h-[calc(100dvh-4rem)] flex items-center">
+        <section
+          class="max-w-7xl mx-auto grid grid-cols-1 grid-rows-2 md:grid-cols-[3fr_2fr] md:grid-rows-1 gap-4 p-8"
+        >
+          <article
+            class="bg-white md:border rounded-lg border-gray-dash flex flex-col"
+          >
+            <header class="p-8 space-y-3">
+              <span
+                class="text-gray-light border border-gray-light-3 px-2 rounded"
+              >
+                Why Spotter.ai_
+              </span>
+
+              <h1 class="font-semibold text-4xl mt-4">
+                The internet's most
+                <span class="text-primary font-bold"> accurate</span>
+                visitor identifier
+              </h1>
+
+              <span class="font-semibold text-gray-dark">
+                Industry-leading accuracy
+                <span class="font-normal">
+                  that lasts for months or years, even when cookies are cleared.
+                </span>
+              </span>
+
+              <button
+                class="block font-semibold shadow text-sm mt-4 bg-gray-1 border-gray-4 border rounded p-1 focus:outline-0 focus:ring-2 focus:ring-primary cursor-pointer hover:bg-gray-100 transition-colors ease-in-out duration-300"
+              >
+                Learn More
+              </button>
+            </header>
+
+            <div class="flex flex-grow items-end pr-6">
+              <figure class="relative hidden md:block pb-6">
+                <img src="/svg/chart.svg" alt="accuracy chart image" />
+
+                <div
+                  class="absolute bottom-17 left-10 border-r border-gray-dash h-50"
+                ></div>
+                <div class="border-t mt-6 border-gray-dash h-1"></div>
+
+                <div class="flex flex-col gap-2">
+                  <div
+                    class="flex justify-between text-xs text-gray-light-2 pl-10"
+                  >
+                    <span>0</span>
+                    <span>30</span>
+                    <span>60</span>
+                    <span>90</span>
+                    <span>120</span>
+                  </div>
+
+                  <div
+                    class="flex justify-between text-xs text-gray-light-2 pl-10"
+                  >
+                    <span>ACCURACY DROPOFF</span>
+                    <span>DAYS AFTER INITIAL IDENTIFICATION</span>
+                  </div>
+                </div>
+              </figure>
+
+              <img
+                class="md:hidden"
+                src="/svg/chart-mobile.svg"
+                alt="accuracy chart image"
+              />
+            </div>
+          </article>
+
+          <section class="grid grid-rows-[1fr_2fr_1fr] gap-4">
+            <article
+              class="bg-white border rounded-lg border-gray-dash p-6 flex gap-4"
+            >
+              <div>
+                <img src="svg/magnify.svg" alt="magnify image" class="w-20" />
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <p class="font-semibold">Any browser, any device.</p>
+                <p class="text-gray-dark text-sm">
+                  Identify returning web and mobile app visitors on all
+                  browsers, iOS, and Android, with exceptional accuracy.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="bg-white border rounded-lg border-gray-dash relative overflow-hidden"
+            >
+              <img
+                src="svg/dots.svg"
+                alt="magnify image"
+                class="cursor-none w-full h-auto block"
+                id="zoom-target"
+              />
+
+              <div
+                class="magnifier absolute pointer-events-none hidden border border-white rounded-full shadow-lg overflow-hidden w-24 h-24 z-10"
+                id="magnifier"
+              ></div>
+
+              <section class="px-6 pb-6 flex gap-4">
+                <div>
+                  <img
+                    src="svg/fingerprint.svg"
+                    alt="magnify image"
+                    class="w-20"
+                  />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <p class="font-semibold">Identify all anonymous visitors.</p>
+                  <p class="text-gray-dark text-sm">
+                    Get details on suspicious visitors even when VPN, incognito
+                    mode, or a tampered browser or device is used.
+                  </p>
+                </div>
+              </section>
+            </article>
+
+            <article
+              class="bg-white border rounded-lg border-gray-dash p-6 flex gap-4"
+            >
+              <div>
+                <img
+                  src="svg/percentage.svg"
+                  alt="magnify image"
+                  class="w-20"
+                />
+              </div>
+
+              <div class="flex flex-col gap-2">
+                <p class="font-semibold">Delight your trusted users.</p>
+                <p class="text-gray-dark text-sm">
+                  Personalize user experience and reduce 2FA and OTP
+                  requirements by identifying logged-out users.
+                </p>
+              </div>
+            </article>
+          </section>
+        </section>
+      </main>
+
+      <div class="absolute top-0 left-0 w-full h-full -z-10">
+        <img
+          src="/svg/wave.svg"
+          class="w-full h-full object-cover"
+          alt="wave background"
+        />
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.body.classList.add("loaded");
+      });
+    </script>
+  </body>
+</html>
