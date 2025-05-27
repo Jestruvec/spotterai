@@ -1,5 +1,6 @@
 import "./style.css";
-import { setupMagnifier, setupSidebarToggle } from "@/utils";
+import { setupMagnifier, setupSidebarToggle, typeWriterEffect } from "@/utils";
 
 setupMagnifier();
 setupSidebarToggle();
+typeWriterEffect("typing-text", 100);
